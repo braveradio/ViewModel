@@ -12,8 +12,22 @@ namespace ViewModel
     public class ApplicationViewModel : INotifyPropertyChanged
     {
         private Phone selectedPhone;
-
         public ObservableCollection<Phone> Phones { get; set; }
+
+        private RelayCommand addCommand;
+        public RelayCommand AddCommand
+        {
+            get
+            {
+                return addCommand ??
+                    (addCommand = new RelayCommand(obj =>
+                    {
+                        Phone phone = new Phone();
+                        Phones.Insert(0, phone);
+                        SelectedPhone = phone;
+                    }));
+            }
+        }
 
         public Phone SelectedPhone
         {

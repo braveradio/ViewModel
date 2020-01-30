@@ -32,6 +32,9 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <StackPanel Grid.Row="1" Orientation="Vertical">
+            <Button Command="{Binding AddCommand}">+</Button>
+        </StackPanel>
 
         <StackPanel Grid.Column="1" DataContext="{Binding SelectedPhone}">
             <TextBlock Text="Выбранный элемент"  />
