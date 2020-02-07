@@ -29,6 +29,26 @@ namespace ViewModel
             }
         }
 
+        // command for deletion
+        private RelayCommand removeCommand;
+        public RelayCommand RemoveCommand
+        {
+            get
+            {
+                return removeCommand ??
+                    (removeCommand = new RelayCommand(obj =>
+                    {
+                        Phone phone = obj as Phone;
+                        if(phone != null)
+                        {
+                            Phones.Remove(phone);
+                        }
+                    },
+                    (obj) => Phones.Count > 0 ));
+                
+            }
+        }
+
         public Phone SelectedPhone
         {
             get { return selectedPhone; }
