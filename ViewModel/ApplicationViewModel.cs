@@ -15,6 +15,7 @@ namespace ViewModel
         public ObservableCollection<Phone> Phones { get; set; }
 
         private RelayCommand addCommand;
+        private RelayCommand doubleCommand;
         public RelayCommand AddCommand
         {
             get
@@ -46,6 +47,28 @@ namespace ViewModel
                     },
                     (obj) => Phones.Count > 0 ));
                 
+            }
+        }
+
+        public RelayCommand DoubleCommand
+        {
+            get
+            {
+                return doubleCommand ??
+                    (doubleCommand = new RelayCommand(obj => 
+                    {
+                        Phone phone = obj as Phone;
+                        if(phone != null)
+                        {
+                            Phone phoneCopy = new Phone
+                            {
+                                Company = phone.Company,
+                                Price = phone.Price,
+                                Title = phone.Title
+                            };
+                            Phones.Insert(0, phoneCopy);
+                        }
+                    }));
             }
         }
 
