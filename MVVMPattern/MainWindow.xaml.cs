@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVVMPattern.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,18 +14,24 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ViewModel
+namespace MVVMPattern
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly AccountCreationViewModel _viewModel = new AccountCreationViewModel();
+
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new ApplicationViewModel();
-            //DataContext = new ApplicationViewModel(new DefaultDialogService(), new JsonFileService());
+
+            DataContext = _viewModel;
+        }
+        private void OnClick_ValidatePassword(object sender, RoutedEventArgs e)
+        {
+            _viewModel.ValidatePassword();
         }
     }
 }
