@@ -4,9 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVMPattern"
-       
         mc:Ignorable="d"
         Title="MVVM" Height="300" Width="400">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Teal" />
+            <Setter Property="FontWeight" Value="ExtraBold" />
+        </Style>
+        <Style TargetType="local:MainWindow">
+            <Setter Property="Background" Value="#71bc78" />
+        </Style>
+    </Window.Resources>
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
