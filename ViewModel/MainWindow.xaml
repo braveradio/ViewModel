@@ -18,6 +18,7 @@
             <Setter Property="Width" Value="40" />
             <Setter Property="Margin" Value="5" />
         </Style>
+        <Image x:Key="BoarImage" Source="Resources/boar.png"/>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -60,6 +61,13 @@
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </Button>
+            <Button >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/boar.png" Height="60" Width="40" />
+                    <TextBlock Text="Boar" FontSize="20"/>
+                </StackPanel>
+            </Button>
+            <Button Content="{StaticResource BoarImage}"/>
         </StackPanel>
 
         <StackPanel Grid.Column="1" DataContext="{Binding SelectedPhone}">

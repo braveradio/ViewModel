@@ -20,6 +20,8 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -43,5 +45,6 @@
                 Width="200"
                 HorizontalAlignment="Center"
                 Padding="5" Margin="5"/>
+        <Button Grid.Row="4" Content="Will you click me?" Command="{Binding SimpleCommand}" Width="120" />
     </Grid>
 </Window>
